@@ -120,7 +120,7 @@ const Weather = (props) => {
   let sunsettime = `${sec.getHours()}:${sec.getMinutes()}`;
 
   useEffect(() => {
-    // addItem();
+    addItem();
   }, []);
 
   return (

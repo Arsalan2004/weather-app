@@ -12,7 +12,7 @@ import TextField from "@mui/material/TextField";
 import Images from "../Images.js";
 // import WbSunnyIcon from "@mui/icons-material/WbSunny";
 
-const Weather = () => {
+const Weather = (props) => {
   const [inputvalue, setinputvalue] = useState("ahmedabad");
   const [backimage, setbackimage] = useState();
   const [weathericon, setweathericon] = useState("fa-sun");
@@ -20,10 +20,9 @@ const Weather = () => {
   const changeevent = (e) => {
     setinputvalue(e.target.value);
   };
-
   const addItem = async () => {
     try {
-      let url = `https://api.openweathermap.org/data/2.5/weather?q=${inputvalue}&units=metric&appid=eead14a8bd7ced1f1635e39508ca478c`;
+      let url = `https://api.openweathermap.org/data/2.5/weather?q=${inputvalue}&units=metric&appid=${props.apikey}`;
       const res = await fetch(url);
       const data = await res.json();
       const { temp, humidity, pressure } = data.main;

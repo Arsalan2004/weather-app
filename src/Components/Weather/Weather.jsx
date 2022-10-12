@@ -23,7 +23,7 @@ const Weather = () => {
 
   const addItem = async () => {
     try {
-      let url = `https://api.openweathermap.org/data/2.5/weather?q=${inputvalue}&units=metric&appid=0838cb2bed5f3c313774aa03400d5165`;
+      let url = `https://api.openweathermap.org/data/2.5/weather?q=${inputvalue}&units=metric&appid=eead14a8bd7ced1f1635e39508ca478c`;
       const res = await fetch(url);
       const data = await res.json();
       const { temp, humidity, pressure } = data.main;
